@@ -8,7 +8,7 @@ fn main() -> i32 {
     let len = 10;
     for i in 0..10 {
         println!("program 2, iteration {}/{}", i+1, len);
-        sleep_ms(1000);
+        sleep_ms(1500);
     }
     0
 }

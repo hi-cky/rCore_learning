@@ -101,10 +101,6 @@ impl TaskManager {
         drop(inner);
 
         info!("[kernel] running first task");
-        // for i in 0..super::MAX_APP_NUM {
-        //     info!("[kernel] kernel stack {}: {:#p}", i, super::loader::KERNEL_STACKS[i].data.as_ptr());
-        //     info!("[kernel] user stack {}: {:#p}", i, super::loader::USER_STACKS[i].data.as_ptr());
-        // }
 
         unsafe {
             __switch(

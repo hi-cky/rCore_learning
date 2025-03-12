@@ -1,9 +1,6 @@
 mod timer;
 
-const INTERVAL_MS: usize = 10;
-
-#[cfg(feature = "board_qemu")]
-pub const CLOCK_FREQ: usize = 12500000;
+use crate::config::CLOCK_FREQ;
 
 pub fn get_time_ms() -> usize {
     timer::get_time() / (CLOCK_FREQ / 1000)

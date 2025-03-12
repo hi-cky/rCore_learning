@@ -9,13 +9,6 @@
 //! For clarity, each single syscall is implemented as its own function, named
 //! `sys_` then the name of the syscall. You can find functions like this in
 //! submodules, and you should also implement syscalls this way.
-
-const SYSCALL_WRITE: usize = 64;
-const SYSCALL_EXIT: usize = 93;
-const SYSCALL_YIELD: usize = 124;
-const SYSCALL_TEST: usize = 123;
-const SYSCALL_GET_TIME: usize = 125;
-
 mod fs;
 mod process;
 mod test;
@@ -25,6 +18,7 @@ use fs::*;
 use process::*;
 use test::*;
 use timer::*;
+use crate::config::{SYSCALL_WRITE, SYSCALL_EXIT, SYSCALL_YIELD, SYSCALL_TEST, SYSCALL_GET_TIME};
 
 /// handle syscall exception with `syscall_id` and other arguments
 pub fn syscall(syscall_id: usize, args: [usize; 3]) -> isize {

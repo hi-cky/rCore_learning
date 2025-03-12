@@ -77,7 +77,7 @@ debug: qemu-version-check build
 
 
 gdbserver: qemu-version-check build
-	@tmux new-session -d "qemu-system-riscv64 $(QEMU_ARGS) -gdb tcp::12346 -S"
+	@qemu-system-riscv64 $(QEMU_ARGS) -gdb tcp::12346 -S
 
 gdbclient:
 	@riscv64-unknown-elf-gdb -ex 'file $(KERNEL_ELF)' -ex 'set arch riscv:rv64' -ex 'target remote localhost:1234'
