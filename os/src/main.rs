@@ -18,7 +18,7 @@
 // #![deny(warnings)]
 #![no_std]
 #![no_main]
-// #![allow(dead_code)]
+#![allow(dead_code)]
 // #![allow(unused)]
 // #![allow(unused_imports)]
 // #![allow(unused_variables)]
@@ -80,19 +80,19 @@ pub fn rust_main() -> ! {
     //下面这段代码不加的话调试又会报错
     //更诡异了？？？
     // TODO: 找到原因
-    debug!(
-        "[kernel] .rodata [{:#x}, {:#x})",
-        srodata as usize, erodata as usize
-    );
-    info!(
-        "[kernel] .data [{:#x}, {:#x})",
-        sdata as usize, edata as usize
-    );
-    warn!(
-        "[kernel] boot_stack top=bottom={:#x}, lower_bound={:#x}",
-        boot_stack_top as usize, boot_stack_lower_bound as usize
-    );
-    error!("[kernel] .bss [{:#x}, {:#x})", sbss as usize, ebss as usize);
+    // debug!(
+    //     "[kernel] .rodata [{:#x}, {:#x})",
+    //     srodata as usize, erodata as usize
+    // );
+    // info!(
+    //     "[kernel] .data [{:#x}, {:#x})",
+    //     sdata as usize, edata as usize
+    // );
+    // warn!(
+    //     "[kernel] boot_stack top=bottom={:#x}, lower_bound={:#x}",
+    //     boot_stack_top as usize, boot_stack_lower_bound as usize
+    // );
+    // error!("[kernel] .bss [{:#x}, {:#x})", sbss as usize, ebss as usize);
     trap::init();
 
 
